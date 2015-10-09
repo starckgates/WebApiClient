@@ -31,17 +31,17 @@
                                             </div>
                                             <div class="input-group input-group-sm">
                                                 <span class="input-group-addon">keyword</span>
-                                                <asp:TextBox ID="TextBox3" runat="server" class="form-control"></asp:TextBox>
+                                                <asp:TextBox ID="tbk" runat="server" class="form-control">山东</asp:TextBox>
                                             </div>
                                             <br />
                                             <div class="input-group input-group-sm">
                                                 <span class="input-group-addon">flag</span>
-                                                <asp:TextBox ID="TextBox4" runat="server" class="form-control"></asp:TextBox>
+                                                <asp:TextBox ID="tbflag" runat="server" class="form-control">member</asp:TextBox>
                                             </div>
                                             <br />
                                             <div class="input-group input-group-sm">
                                                 <span class="input-group-addon">field</span>
-                                                <asp:TextBox ID="TextBox5" runat="server" class="form-control"></asp:TextBox>
+                                                <asp:TextBox ID="tbfield" runat="server" class="form-control">Enterprise</asp:TextBox>
                                             </div>
                                         </div>
                                     </div>
@@ -53,17 +53,24 @@
                                             </div>
                                             <div class="input-group input-group-sm">
                                                 <span class="input-group-addon">Timestamp</span>
-                                                <asp:TextBox ID="TextBox1" runat="server" class="form-control"></asp:TextBox>
+                                                <asp:TextBox ID="tbtime" runat="server" class="form-control"></asp:TextBox>
                                                 <span class="input-group-btn">
-                                                    <asp:Button ID="Button1" runat="server" Text="Submit" class="btn " />
+                                                    <asp:Button ID="btntime" runat="server" Text="Submit" class="btn " OnClick="btntime_Click" />
                                                 </span>
                                             </div>
                                             <br />
                                             <div class="input-group input-group-sm">
                                                 <span class="input-group-addon">MD5</span>
-                                                <asp:TextBox ID="TextBox2" runat="server" class="form-control"></asp:TextBox>
+                                                <asp:TextBox ID="tbmd5" runat="server" class="form-control"></asp:TextBox>
                                                 <span class="input-group-btn">
-                                                    <asp:Button ID="Button2" runat="server" Text="Submit" class="btn " />
+                                                    <asp:Button ID="btnmd5" runat="server" Text="Submit" class="btn" OnClick="btnmd5_Click"/>
+                                                </span>
+                                            </div>
+                                            <br />
+                                            <div class="input-group input-group-sm">
+                                                <span class="input-group-addon">生成URL</span>
+                                                <span class="input-group-btn">
+                                                    <asp:Button ID="btnmake" runat="server" Text="Submit" class="btn" OnClick="btnmake_Click"/>
                                                 </span>
                                             </div>
                                         </div>
@@ -75,9 +82,9 @@
                                         <div class="col-lg-6">
                                             <div class="input-group input-group-sm">
                                                 <span class="input-group-addon">url</span>
-                                                <asp:TextBox ID="TextBox6" runat="server" class="form-control"></asp:TextBox>
+                                                <asp:TextBox ID="tburl" runat="server" class="form-control"></asp:TextBox>
                                                 <span class="input-group-btn">
-                                                    <asp:Button ID="Button3" runat="server" Text="Submit" class="btn " />
+                                                    <asp:Button ID="btnurl" runat="server" Text="Submit" class="btn " OnClick="btnurl_Click" />
                                                 </span>
                                             </div>
                                         </div>
@@ -92,7 +99,9 @@
                 <div class="panel-heading">
                     <h3 class="panel-title">返回结果</h3>
                 </div>
-                <div class="panel-body"></div>
+                <div class="panel-body">
+                    <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
+                </div>
             </div>
         </div>
 
