@@ -63,14 +63,14 @@
                                                 <span class="input-group-addon">MD5</span>
                                                 <asp:TextBox ID="tbmd5" runat="server" class="form-control"></asp:TextBox>
                                                 <span class="input-group-btn">
-                                                    <asp:Button ID="btnmd5" runat="server" Text="Submit" class="btn" OnClick="btnmd5_Click"/>
+                                                    <asp:Button ID="btnmd5" runat="server" Text="Submit" class="btn" OnClick="btnmd5_Click" />
                                                 </span>
                                             </div>
                                             <br />
                                             <div class="input-group input-group-sm">
                                                 <span class="input-group-addon">生成URL</span>
                                                 <span class="input-group-btn">
-                                                    <asp:Button ID="btnmake" runat="server" Text="Submit" class="btn" OnClick="btnmake_Click"/>
+                                                    <asp:Button ID="btnmake" runat="server" Text="Submit" class="btn" OnClick="btnmake_Click" />
                                                 </span>
                                             </div>
                                         </div>
@@ -97,12 +97,44 @@
             </div>
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title">返回结果</h3>
+                    <h3 class="panel-title">返回结果列表</h3>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-striped">
+                        <asp:Repeater ID="rplist" runat="server" EnableViewState="true">
+                            <HeaderTemplate>
+                                <thead>
+                                    <tr>
+                                        <th>企业名</th>
+                                        <th>用户名</th>
+                                        <th>添加时间</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                            </HeaderTemplate>
+                            <ItemTemplate>
+                                <tr>
+                                    <td><%#Eval("enterprise") %></td>
+                                    <td><%#Eval("adminname") %></td>
+                                    <td><%#Eval("addtime") %></td>
+                                </tr>
+                            </ItemTemplate>
+                            <FooterTemplate>
+                                </tbody>
+                            </FooterTemplate>
+                        </asp:Repeater>
+                    </table>
+                </div>
+            </div>
+                        <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">返回Json结果</h3>
                 </div>
                 <div class="panel-body">
                     <asp:Label ID="Label1" runat="server" Text=""></asp:Label>
                 </div>
             </div>
+
         </div>
 
     </form>
